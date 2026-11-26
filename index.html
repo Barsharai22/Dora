@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Barsha Rai - IT Graduate, ICT Project Support and IT Support Portfolio">
+<title>Barsha Rai | IT Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --navy: #14243d;
+  --blue: #4169a5;
+  --light: #f4f7fb;
+  --white: #ffffff;
+  --text: #34445a;
+  --muted: #718096;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 88%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+/* Navigation */
+
+header {
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+}
+
+nav {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--navy);
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+/* Hero */
+
+.hero {
+  background: linear-gradient(120deg, #14243d, #253f66);
+  color: white;
+  padding: 100px 0;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.eyebrow {
+  color: #a9c8f5;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 1.2;
+  margin: 18px 0;
+}
+
+.hero h1 span {
+  color: #9ec5ff;
+}
+
+.hero h2 {
+  font-size: 19px;
+  color: #dce8f8;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #d5deec;
+  max-width: 600px;
+  font-size: 15px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 23px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-block;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--navy);
+}
+
+.btn-outline {
+  border: 1px solid #b9cce8;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.profile-image {
+  width: 280px;
+  height: 330px;
+  border-radius: 18px;
+  border: 5px solid rgba(255,255,255,.2);
+  object-fit: cover;
+  background: #e3eaf4;
+  box-shadow: 0 15px 35px rgba(0,0,0,.2);
+}
+
+/* General sections */
+
+section {
+  padding: 80px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading span {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: 31px;
+  margin-top: 7px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* About */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 35px;
+}
+
+.about-card, .info-card, .skill-card,
+.project-card, .experience-card {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(20,36,61,.05);
+}
+
+.about-card h3, .info-card h3 {
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.about-card p {
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+
+.info-card p {
+  font-size: 13px;
+  padding: 8px 0;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.info-card i {
+  color: var(--blue);
+  width: 25px;
+}
+
+.info-card a {
+  overflow-wrap: anywhere;
+}
+
+/* Skills */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  border-top: 3px solid var(--blue);
+  transition: .3s;
+}
+
+.skill-card:hover, .project-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card i {
+  font-size: 25px;
+  color: var(--blue);
+  margin-bottom: 15px;
+}
+
+.skill-card h3 {
+  color: var(--navy);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Projects */
+
+.projects-section {
+  background: #edf2f8;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.project-card {
+  border-bottom: 3px solid var(--blue);
+  transition: .3s;
+}
+
+.project-number {
+  color: #8ca8d0;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.project-card h3 {
+  color: var(--navy);
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.tags span {
+  background: #edf3fb;
+  color: #4169a5;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Education and experience */
+
+.timeline {
+  border-left: 2px solid #c7d8ef;
+  margin-left: 10px;
+  padding-left: 28px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--blue);
+  border-radius: 50%;
+  left: -35px;
+  top: 8px;
+}
+
+.timeline-item h3 {
+  color: var(--navy);
+  font-size: 17px;
+}
+
+.timeline-item .date {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.timeline-item p, .timeline-item li {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.timeline-item ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+/* Professional development */
+
+.development {
+  background: #edf2f8;
+}
+
+.development-card {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  border-left: 4px solid var(--blue);
+}
+
+.development-card h3 {
+  color: var(--navy);
+}
+
+.development-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Contact */
+
+.contact-section {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+}
+
+.contact-section .section-heading h2 {
+  color: white;
+}
+
+.contact-section .section-heading p {
+  color: #c4d1e2;
+}
+
+.contact-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-items a {
+  font-size: 14px;
+  color: #d9e7fa;
+}
+
+.contact-items i {
+  color: #9ec5ff;
+  margin-right: 8px;
+}
+
+.social-links {
+  margin-top: 28px;
+}
+
+.social-links a {
+  font-size: 23px;
+  margin: 0 12px;
+  color: white;
+}
+
+footer {
+  background: #101c30;
+  color: #aebbd0;
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+}
+
+/* Mobile */
+
+@media(max-width: 800px) {
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .profile-image {
+    width: 220px;
+    height: 250px;
+  }
+
+  .about-grid, .skills-grid, .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+}
+
+@media(max-width: 480px) {
+  nav {
+    padding: 15px 0;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">BARSHA<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+
+    <div class="hero-text">
+      <div class="eyebrow">WELCOME TO MY PROFESSIONAL PORTFOLIO</div>
+
+      <h1>Hello, I'm <span>Barsha Rai.</span></h1>
+
+      <h2>IT Graduate | ICT Project Support | IT Support</h2>
+
+      <p>
+        Motivated Information Technology graduate with an interest
+        in project coordination, technical support and technology
+        operations. Passionate about learning, solving problems and
+        contributing to practical technology solutions.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">Explore My Projects</a>
+        <a href="resume.pdf" class="btn btn-outline" target="_blank">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <img src="profile.jpg.jpeg"
+           alt="Barsha Rai"
+           class="profile-image">
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>Get to know me</span>
+      <h2>About Me</h2>
+      <p>My background, interests and professional journey</p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-card">
+        <h3>Professional Summary</h3>
+
+        <p>
+          I am a motivated Bachelor of Information Technology
+          graduate from King's Own Institute (KOI), Newcastle,
+          with an interest in ICT project management, IT support
+          and technology operations.
+        </p>
+
+        <p>
+          My academic studies have provided foundational knowledge
+          in project management, software development, databases,
+          networking and Windows operating systems.
+        </p>
+
+        <p>
+          Through academic projects, I have gained exposure to
+          requirements analysis, problem-solving, database
+          development, project documentation and technology solutions.
+        </p>
+
+        <p>
+          I am currently undertaking the ACS Professional Year
+          Program to strengthen my professional and workplace
+          capabilities.
+        </p>
+
+        <p>
+          In addition to my IT education, I bring over four years
+          of professional experience in the health industry.
+          This experience has strengthened my communication,
+          teamwork, organisation, adaptability and time-management
+          skills.
+        </p>
+
+        <p>
+          I am a quick learner who is eager to contribute to
+          IT projects, support technical operations and continue
+          developing practical industry experience.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Personal Information</h3>
+
+        <p><i class="fa-solid fa-user"></i> Barsha Rai</p>
+        <p><i class="fa-solid fa-location-dot"></i> Newcastle, NSW, Australia</p>
+        <p><i class="fa-solid fa-phone"></i>
+          <a href="tel:0447682512">0447 682 512</a>
+        </p>
+        <p><i class="fa-solid fa-envelope"></i>
+          <a href="mailto:varsharrae@gmail.com">varsharrae@gmail.com</a>
+        </p>
+        <p><i class="fa-solid fa-graduation-cap"></i> Bachelor of Information Technology</p>
+        <p><i class="fa-solid fa-briefcase"></i> ICT Project Support & IT Support</p>
+        <p><i class="fa-solid fa-language"></i> English & Nepali</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:#edf2f8;">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>What I can offer</span>
+      <h2>Technical Skills</h2>
+      <p>Foundational knowledge and developing technical capabilities</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <i class="fa-solid fa-list-check"></i>
+        <h3>ICT Project Management</h3>
+        <p>Project planning, task coordination, project documentation,
+        requirements analysis, WBS, Gantt charts and teamwork.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-computer"></i>
+        <h3>IT Support Fundamentals</h3>
+        <p>Windows operating systems, computer systems,
+        basic troubleshooting concepts and technical problem-solving.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-network-wired"></i>
+        <h3>Networking</h3>
+        <p>Networking fundamentals, connectivity and
+        basic network concepts.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Programming</h3>
+        <p>Foundational knowledge of Java, Python,
+        HTML and CSS.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-database"></i>
+        <h3>Database Management</h3>
+        <p>SQL fundamentals, database design,
+        data management and CRUD operations.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>IT Tools</h3>
+        <p>Microsoft Office Suite, Git fundamentals
+        and project collaboration concepts.</p>
+      </div>
+
+    </div>
+
+    <div class="section-heading" style="margin-top:55px;">
+      <span>Beyond technical knowledge</span>
+      <h2>Professional Skills</h2>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <i class="fa-solid fa-comments"></i>
+        <h3>Communication</h3>
+        <p>Verbal and written communication developed through
+        academic and professional experience.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-people-group"></i>
+        <h3>Team Collaboration</h3>
+        <p>Working collaboratively with different team members
+        to achieve shared goals.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>Problem-Solving</h3>
+        <p>Identifying issues, analysing information and
+        approaching problems logically.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Time Management</h3>
+        <p>Organising priorities and completing assigned
+        responsibilities within deadlines.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <h3>Adaptability</h3>
+        <p>Learning new systems, technologies and
+        working environments.</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-list-check"></i>
+        <h3>Attention to Detail</h3>
+        <p>Maintaining accuracy and professional standards
+        when completing tasks.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>My academic work</span>
+      <h2>Featured Projects</h2>
+      <p>Applying technology, collaboration and project management knowledge</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-number">PROJECT 01</div>
+
+        <h3>Personalised Learning Recommendation System</h3>
+
+        <p>
+          A team-based academic project focused on developing
+          a personalised e-learning platform that provides
+          customised learning recommendations based on
+          students' academic performance and learning preferences.
+        </p>
+
+        <p><strong>My Contributions:</strong></p>
+
+        <p>
+          Contributed to project planning, requirements analysis,
+          user stories, project scope, WBS, timelines, system design,
+          development, testing and project documentation.
+        </p>
+
+        <p><strong>Technologies and Tools:</strong></p>
+
+        <div class="tags">
+          <span>React.js</span>
+          <span>Node.js</span>
+          <span>MongoDB</span>
+          <span>Agile</span>
+          <span>WBS</span>
+          <span>Gantt Chart</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">PROJECT 02</div>
+
+        <h3>AI and Data Analytics Academic Work</h3>
+
+        <p>
+          Academic learning and practical exercises involving
+          artificial intelligence, data analytics and
+          technology-based problem-solving.
+        </p>
+
+        <p>
+          Explored analytical approaches, machine learning
+          concepts and the application of technology to
+          real-world problems.
+        </p>
+
+        <div class="tags">
+          <span>Artificial Intelligence</span>
+          <span>Data Analytics</span>
+          <span>Machine Learning</span>
+          <span>Research</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>Academic background</span>
+      <h2>Education</h2>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="date">2022 – 2025</div>
+
+        <h3>Bachelor of Information Technology (BIT)</h3>
+
+        <p><strong>King's Own Institute (KOI)</strong></p>
+        <p>Newcastle, Australia</p>
+
+        <ul>
+          <li>Studied programming, database management and information systems.</li>
+          <li>Developed foundational knowledge in artificial intelligence and data analytics.</li>
+          <li>Completed individual and group academic projects.</li>
+          <li>Explored software development and IT project management concepts.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:#edf2f8;">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>Professional background</span>
+      <h2>Work Experience</h2>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="date">2022 – Present</div>
+
+        <h3>Aged Care Worker</h3>
+
+        <p><strong>HammondCare | Australia</strong></p>
+
+        <ul>
+          <li>Over four years of experience in a professional aged-care environment.</li>
+          <li>Collaborated with multidisciplinary teams to coordinate daily responsibilities.</li>
+          <li>Managed competing priorities and completed responsibilities within required timeframes.</li>
+          <li>Demonstrated effective communication, teamwork and problem-solving.</li>
+          <li>Maintained accurate documentation and followed organisational procedures.</li>
+          <li>Developed interpersonal skills through communication with residents, families and colleagues.</li>
+          <li>Demonstrated reliability, adaptability and the ability to work independently and within a team.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL DEVELOPMENT -->
+<section id="development">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>Continuous learning</span>
+      <h2>Professional Development</h2>
+    </div>
+
+    <div class="development-card">
+      <h3>ACS Professional Year Program</h3>
+      <p><strong>Australian Computer Society | In Progress</strong></p>
+      <p>
+        Developing professional communication, workplace
+        collaboration and industry readiness while building
+        an understanding of Australian workplace practices
+        and professional expectations.
+      </p>
+    </div>
+
+    <div class="development-card" style="margin-top:20px;">
+      <h3>Certifications & Additional Learning</h3>
+      <p>
+        Continuing to develop knowledge in Windows operating
+        systems, troubleshooting, networking, cybersecurity
+        fundamentals, IT service support, Microsoft 365,
+        Azure and IT project management.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>Get in touch</span>
+      <h2>Let's Connect</h2>
+      <p>
+        I am interested in connecting with IT professionals
+        and exploring opportunities in ICT Project Support
+        and IT Support.
+      </p>
+    </div>
+
+    <div class="contact-items">
+
+      <a href="tel:0447682512">
+        <i class="fa-solid fa-phone"></i> 0447 682 512
+      </a>
+
+      <a href="mailto:varsharrae@gmail.com">
+        <i class="fa-solid fa-envelope"></i> varsharrae@gmail.com
+      </a>
+
+      <span>
+        <i class="fa-solid fa-location-dot"></i> Newcastle, NSW
+      </span>
+
+    </div>
+
+    <div class="social-links">
+
+      <a href="https://www.linkedin.com/in/varsha-dumi-rai-5874b533b/"
+         target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a href="https://github.com/"
+         target="_blank" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+
+      <a href="mailto:varsharrae@gmail.com"
+         aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+
+    </div>
+
+    <div style="margin-top:30px;">
+      <a href="mailto:varsharrae@gmail.com" class="btn btn-primary">
+        Contact Me
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Barsha Rai. All Rights Reserved.</p>
+  <p>Designed and developed as my professional IT portfolio.</p>
+</footer>
+
+</body>
+</html>
